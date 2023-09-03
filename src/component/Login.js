@@ -63,6 +63,9 @@ function Login(){
             <br/>
             <br/>
             <button onClick={submit}>Login</button>
+
+            <p>email : khinlay.merryshall@gmail.com</p>
+            <p>password : Password123%</p>
             
         </div>
     </div>
