@@ -8,7 +8,10 @@ class StoryDetailAction{
         this.actionType.getStoryDetail="getStoryDetail"
         this.actionType.deleteComment="deleteComment"
         this.actionType.editComment="editComment"
+        this.actionType.adminActionDetail="adminActionDetail"
 
+
+        
         
     }
    
@@ -49,6 +52,26 @@ class StoryDetailAction{
             response.data=e.message
         }
         dispatcher.dispatch({type:this.actionType.sendComment,data:response})
+        
+    }
+
+    
+    adminActionDetail =async(value)=>{
+        
+        try{
+            var response={
+                data:[],
+                ok:false
+            }
+            var res = await customAPI.post(`memory/adminActionDetail`,value)
+            response.ok=true
+            response.data=res.data
+        }
+        catch(e){
+            response.ok=false
+            response.data=e.message
+        }
+        dispatcher.dispatch({type:this.actionType.adminActionDetail,data:response})
         
     }
 

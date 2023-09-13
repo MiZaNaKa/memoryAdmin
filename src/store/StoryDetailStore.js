@@ -15,7 +15,14 @@ class StoryDetailStore extends Store {
             "text" : "",
             "title" : "dsfsdf",
         }
+        this.tempoData={
+            go:false
+        }
         
+    }
+
+    getTempoData=()=>{
+        return this.tempoData
     }
 
     getDetail=()=>{
@@ -26,10 +33,16 @@ class StoryDetailStore extends Store {
        
         if(action.type===Action.actionType.getStoryDetail){
             if(action.data.ok){
-              
                this.detail=action.data.data.success.data.success.data
             }
         }
+        else if(action.type===Action.actionType.adminActionDetail){
+            if(action.data.ok){
+               this.tempoData.go=true
+            }
+        }
+
+        
       
         else{
             return false

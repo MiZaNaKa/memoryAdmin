@@ -34,7 +34,7 @@ function Story (props){
           
           {list.map((value,index)=>{
             return <div className='storyBox' onClick={()=>goStoryDetail(value._id)} key={index} style={{marginBottom:20,borderBottom:'1px solid #000'}}>
-              <h1>{value.title}</h1>
+              <h1>{value.title} <h3>{value.name}</h3></h1>
               {value.text.length>800 ?
                   <p className='storyContent'>{value.text.substring(0, 800)} ...<a>See More</a></p>
                   :

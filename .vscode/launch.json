@@ -1,5 +1,20 @@
 {
     "configurations": [
+
+        {
+            "name": "Chrome degub",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:3006/",
+            "webRoot": "${workspaceFolder}"
+        },
+    {
+        "name": "Attach to Chrome",
+        "port": 3006,
+        "request": "attach",
+        "type": "chrome",
+        "webRoot": "${workspaceFolder}"
+    },
         {
             "type": "msedge",
             "name": "http://localhost:3006/",

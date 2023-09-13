@@ -113,6 +113,9 @@ function MyStoryList (props){
         data:false
       }
 
+      console.log(checkData)
+      console.log(checkData)
+
       
       if(checkData.check[index]){
         request.data=false
@@ -248,7 +251,7 @@ function MyStoryList (props){
                 return <div className='storyBox' 
                 // onClick={()=>goStoryDetail(value._id)} 
                 key={index} style={{marginBottom:20,borderBottom:'1px solid #000',paddingBottom:20}}>
-                  <h1>{value.title}</h1>
+                  <h1>{value.title} <span style={{fontSize:12,color:'gray'}}>{value.name}</span></h1>
                   <p>{value.check}</p>
                   {value.text.length>800 ?
                     <div className='clearfix'>

@@ -107,19 +107,45 @@ function StoryDetail (props){
     }
 
     const optionAction=(index)=>{
-      
       setAction(!action)
       setNoteIndex(index)
     }
 
+    const adminActionDetail=(value)=>{
+      var request={
+        storyID:props.params.id,
+        stauts:value
+      }
+      Action.adminActionDetail(request)
+    }
+
+    
+
 
     return<div className='header'>
         <Header/>
-        <h1>{detail.title}</h1>
+        
+        <h1>{detail.title} <span style={{fontSize:12,color:'gray'}}>{detail.name}</span></h1>
         <br/>
         <p className='storyContent'>{detail.text}</p>
         <div>
+          <div className='adminActionButton'>
+            {detail.status===1 ?
+              <button onClick={()=>adminActionDetail(2)} className='buttonBox'>Approve</button>
+              :
+              null
+            }
 
+            {detail.status==4 ?
+              <button onClick={()=>adminActionDetail(1)} className='buttonBox'>UnBan</button>
+              :
+              <button onClick={()=>adminActionDetail(4)} className='buttonBox'>Ban</button>
+            }
+          </div>
+
+          
+
+       
         
         
         
@@ -138,8 +164,8 @@ function StoryDetail (props){
           <img onClick={likeUnlikeAction} src={Heart} className='miniIcon'/>
         }
         </div>
-        <input value={comment} onChange={commentOnChange} className="commentInputBox" placeholder='write comment'/>
-        <button onClick={sendCommentAPI} className='buttonBox'>Send</button>
+        {/* <input value={comment} onChange={commentOnChange} className="commentInputBox" placeholder='write comment'/>
+        <button onClick={sendCommentAPI} className='buttonBox'>Send</button> */}
 
         
         <div className='marginT'>
@@ -168,7 +194,7 @@ function StoryDetail (props){
                         <br/>
                         {new Date(value.date).toLocaleString().replace(",","").replace(/:.. /," ")}
                        
-                        <p onClick={()=>editCommentClick(value.comments)}>Edit</p>
+                        {/* <p onClick={()=>editCommentClick(value.comments)}>Edit</p> */}
                       </div>
                     }
                     
