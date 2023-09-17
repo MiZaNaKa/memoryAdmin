@@ -356,7 +356,7 @@ function MyStoryList (props){
           <div className='actionBottom'>
             <div className='clearfix'>
               <div className='actionBottom_1'>
-                {tempoData.checkAll ? 
+                {checkData.checkAll ? 
                   <div onClick={checkAllAction} className='checkdIcon'/>
                   : 
                   <div onClick={checkAllAction} className='checkIcon'/>

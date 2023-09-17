@@ -114,6 +114,9 @@ class MyStoryListStore extends Store {
                 if(this.checkData.check.length ==filtered.length){
                     this.checkData.checkAll=action.data.data
                 }
+                else{
+                    this.checkData.checkAll=false
+                }
             }
             else{
                 this.checkData.selectedNo=0
