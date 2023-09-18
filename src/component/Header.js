@@ -6,9 +6,17 @@ import Logo from "../img/podcast.png"
 import loginHelper from '../jwtHelper/jwtHelper'
 import Me from "../img/me.png"
 
+import Drawer from 'react-modern-drawer'
+import Close from "../img/close.png"
+import 'react-modern-drawer/dist/index.css'
+
 import '../commonStyle/commonStyle.css'
 function Home(){
     const[userInfo,setUserInfo]=useState('')
+    const [isOpen, setIsOpen] = React.useState(false)
+    const toggleDrawer = () => {
+        setIsOpen((prevState) => !prevState)
+    }
     useEffect(() => {
         const getUserInfo = async () => {
           const data = await loginHelper.UserInfo()
@@ -42,24 +50,38 @@ function Home(){
             </div>
 
             <div className="userInfo">
-                {userInfo ?
-                    <ul>
-                        <li id="visible">
-                            <img src={Me} className="logoIcon"/>
-                            <ul id="hidden">
-                           
-                            <li><p onClick={logOut} className="logout">Log Out</p></li>
-                            
-                            </ul>
-                        </li>
-                    </ul>
-                    :
-                    <img src={Me} className="logoIcon"/>
-                }
+                <img onClick={toggleDrawer} src={Me} className="logoIcon"/>
 
             </div>
 
         </div>
+
+        <Drawer
+            open={isOpen}
+            onClose={toggleDrawer}
+            direction='left'
+            className='bla bla bla'
+        >
+            <div style={{marginTop:40}}>
+                <img onClick={toggleDrawer}  src={Close} className="menuClose"/>
+                {/* <div style={{marginBottom:25,textAlign:'center'}}>
+                    <Link  className="link" to="/MyStoryList">
+                        My Story
+                    </Link>
+                </div>
+
+                <div style={{marginBottom:25,textAlign:'center'}}>
+                    <Link className="link" to="/PostStory">
+                        Post Story
+                    </Link>
+                </div> */}
+
+                <div style={{marginBottom:25,textAlign:'center'}}>
+                    <p onClick={logOut} className="logout">Log Out</p>
+                </div>
+                
+            </div>
+        </Drawer>
 
         
     </div>
