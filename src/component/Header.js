@@ -8,6 +8,7 @@ import Me from "../img/me.png"
 
 import Drawer from 'react-modern-drawer'
 import Close from "../img/close.png"
+import Menu from "../img/menu.png"
 import 'react-modern-drawer/dist/index.css'
 
 import '../commonStyle/commonStyle.css'
@@ -39,7 +40,12 @@ function Home(){
 
     return <div className="header">
         <div className="headerBox clearfix">
-            <div className="logo">
+            <div className="logo1">
+                <Link className="link" to="/">
+                    <img onClick={toggleDrawer} src={Menu} className="menuIcon"/>
+                </Link>
+            </div>
+            <div className="logo2">
                 <Link className="link" to="/">
                     <img src={Logo} className="logoIcon"/>
                 </Link>
@@ -50,7 +56,7 @@ function Home(){
             </div>
 
             <div className="userInfo">
-                <img onClick={toggleDrawer} src={Me} className="logoIcon"/>
+                <img src={Me} className="logoIcon"/>
 
             </div>
 

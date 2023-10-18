@@ -19,6 +19,23 @@
     width: 100%;
 }
 
+.menuIcon{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+.logo1{
+    width: 5%;
+    float: left;
+    display: block;
+}
+
+.logo2{
+    width: 15%;
+    float: left;
+    display: block;
+}
+
 .logo{
     width: 20%;
     float: left;

@@ -47,6 +47,12 @@ function StoryDetail (props){
         var detail=Store.getDetail()
         const data = await loginHelper.UserInfo()
         var filter=detail.like.filter(x=>x==data._id)
+
+        const tempoDataAll = Store.getTempoData()
+        if(tempoDataAll.go){
+          Store.clearAll()
+          props.navigation('/')
+        }
         
         if(filter.length>0){
           setLove(true)

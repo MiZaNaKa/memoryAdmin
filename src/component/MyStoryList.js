@@ -17,7 +17,7 @@ const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 function MyStoryList (props){
     const navigate = useNavigate();
     const[list,setList]=useState(Store.getStoryList())
-    const [selectedItem, setSelectedItem] = useState("1")
+    const [selectedItem, setSelectedItem] = useState("00")
     // const [selectedItemIndex, setSelectedItemIndex] = useState("")
     const [query, setQuery] = useState({status:1,search:'',id:''})
     const [pickerSelected, setPickerSelected] = useState("1")
@@ -258,8 +258,8 @@ function MyStoryList (props){
                       <div className='storyContentBox1'>
                       
                         <select className='pickerStatus' name='item-selected' value={selectedItem} onChange={(e)=>handleChange(e,index,value._id)}>
-                          <option value="1">Select</option>
-                          {/* <option value="2">Edit</option> */}
+                          <option value="00">Select</option>
+                          {pickerSelected === '1' ? <option value="1">Approve</option> : null}                          
                           <option value="3">Detail</option>
                           <option value="4">Delete</option>
                           {pickerSelected!=='2' && pickerSelected!== 2 ? <option value="5">Only Me</option>: null}
@@ -291,8 +291,8 @@ function MyStoryList (props){
                       <div className='storyContentBox1'>
                         
                         <select className='pickerStatus' name='item-selected' value={selectedItem} onChange={(e)=>handleChange(e,index,value._id)}>
-                          <option value="1">Select</option>
-                          {/* <option value="2">Edit</option> */}
+                          <option value="00">Select</option>
+                          {pickerSelected === '1' ? <option value="1">Approve</option> : null}
                           <option value="3">Detail</option>
                           <option value="4">Delete</option>
                           {pickerSelected!=='2' && pickerSelected!== 2 ? <option value="5">Only Me</option>: null}

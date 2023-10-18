@@ -53,7 +53,7 @@ class MyStoryListAction{
                 ok:false
             }
             
-            var res = await API.post(`memory/myStoryListStatus`,value)
+            var res = await API.post(`memory/adminStoryListStatus`,value)
             response.ok=true
             response.data=res.data
         }

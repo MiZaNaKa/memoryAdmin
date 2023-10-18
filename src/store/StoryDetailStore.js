@@ -21,6 +21,22 @@ class StoryDetailStore extends Store {
         
     }
 
+    clearAll=()=>{
+        this.detail={
+            "like" : [
+
+            ],
+            "comment" : [
+
+            ],
+            "text" : "",
+            "title" : "dsfsdf",
+        }
+        this.tempoData={
+            go:false
+        }
+    }
+
     getTempoData=()=>{
         return this.tempoData
     }
