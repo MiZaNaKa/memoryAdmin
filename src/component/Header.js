@@ -40,12 +40,12 @@ function Home(){
 
     return <div className="header">
         <div className="headerBox clearfix">
-            <div className="logo1">
+            {/* <div className="logo1">
                 <Link className="link" to="/">
                     <img onClick={toggleDrawer} src={Menu} className="menuIcon"/>
                 </Link>
-            </div>
-            <div className="logo2">
+            </div> */}
+            <div className="logo">
                 <Link className="link" to="/">
                     <img src={Logo} className="logoIcon"/>
                 </Link>

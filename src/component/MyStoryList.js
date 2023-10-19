@@ -7,7 +7,7 @@ import withNavigateHook from '../common/Navigate'
 import StyleIt from 'style-it';
 import noData from "../img/noData.png"
 import { useNavigate } from "react-router-dom";
-
+import loginHelper from '../jwtHelper/jwtHelper'
 
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
@@ -28,9 +28,20 @@ function MyStoryList (props){
     const [show, setShow] = useState(false)
     const [checkData, setCheckData] = useState(Store.getCheckData())
 
-    // useEffect(() => {
-    //   setList(list)
-    // }, [list])
+    useEffect(() => {
+      const getUserInfo = async () => {
+        const data = await loginHelper.UserInfo()
+        if(data){
+          navigate('/')
+        }
+        else{
+          navigate('/Login')
+        }
+      }
+    
+      getUserInfo()
+      .catch(console.error);
+    }, [])
     
     useEffect(() => {
       Action.getStoryListAll(query)
