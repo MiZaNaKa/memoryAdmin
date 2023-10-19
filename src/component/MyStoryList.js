@@ -70,6 +70,8 @@ function MyStoryList (props){
    
 
     const handleChange = (e,index,id) => {
+      setCurrentPage(0)
+      setOffset(0)
       setPickerSelected('1')
       setQuery(prevState => ({
         ...prevState,
