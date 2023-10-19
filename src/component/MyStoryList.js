@@ -174,6 +174,8 @@ function MyStoryList (props){
     }
 
     const myStoryMultipleAction=(value) =>{  
+      setCurrentPage(0)
+      setOffset(0)
       setShow(false)
       setCheckData(prevState => ({
         ...prevState,

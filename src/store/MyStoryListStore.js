@@ -138,6 +138,7 @@ class MyStoryListStore extends Store {
         }
         else if(action.type===Action.actionType.checkAllAction){
             this.tempoData.checkAll=!this.tempoData.checkAll
+            this.checkData.checkAll=!this.checkData.checkAll
             this.checkData.check=[]
             
             for (i = 0; i < this.storyList.length; i++) {
