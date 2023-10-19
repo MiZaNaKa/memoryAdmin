@@ -73,6 +73,7 @@ function MyStoryList (props){
       setCurrentPage(0)
       setOffset(0)
       setPickerSelected('1')
+      setShow(false)
       setQuery(prevState => ({
         ...prevState,
         status: '1'
@@ -126,10 +127,6 @@ function MyStoryList (props){
         data:false
       }
 
-      console.log(checkData)
-      console.log(checkData)
-
-      
       if(checkData.check[index]){
         request.data=false
        
