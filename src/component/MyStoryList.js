@@ -262,10 +262,12 @@ function MyStoryList (props){
                           {pickerSelected === '1' ? <option value="1">Approve</option> : null}                          
                           <option value="3">Detail</option>
                           <option value="4">Delete</option>
-                          {pickerSelected!=='2' && pickerSelected!== 2 ? <option value="5">Only Me</option>: null}
+                          {/* {pickerSelected!=='2' && pickerSelected!== 2 ? <option value="5">Only Me</option>: null} */}
                         
                         
                           {/* {pickerSelected!=='3' && pickerSelected!== 3 && pickerSelected!=='1' && pickerSelected!== 1  ? <option value="7">Publish</option>: null} */}
+                          {pickerSelected =='3' || pickerSelected =='2' || pickerSelected =='1' ? <option value="5">Ban</option> : null}
+                          {pickerSelected!=='3' && pickerSelected!== 3 && pickerSelected!=='1' && pickerSelected!== 1  ? <option value="7">Publish</option>: null}
                           
                         </select>
 
@@ -295,7 +297,8 @@ function MyStoryList (props){
                           {pickerSelected === '1' ? <option value="1">Approve</option> : null}
                           <option value="3">Detail</option>
                           <option value="4">Delete</option>
-                          {pickerSelected!=='2' && pickerSelected!== 2 ? <option value="5">Only Me</option>: null}
+                          {pickerSelected =='3' || pickerSelected =='2' || pickerSelected =='1' ? <option value="5">Ban</option> : null}
+                          {/* {pickerSelected!=='2' && pickerSelected!== 2 ? <option value="5">Only Me</option>: null} */}
                           {pickerSelected!=='3' && pickerSelected!== 3 && pickerSelected!=='1' && pickerSelected!== 1  ? <option value="7">Publish</option>: null}
                         </select>
 
